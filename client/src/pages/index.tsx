@@ -1,5 +1,6 @@
 import Image from "next/image";
 import localFont from "next/font/local";
+import { Navbar,  Footer, Welcome, Services, Transactions } from "./components";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,9 +16,15 @@ const geistMono = localFont({
 export default function Home() {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} min-h-screen`}
     >
-      <h1>Hello World!</h1>
+      <div className="gradient-bg-welcome">
+        <Navbar/>
+        <Welcome />
+      </div>
+      <Services/>
+      <Transactions/>
+      <Footer/>
     </div>
   );
 }
